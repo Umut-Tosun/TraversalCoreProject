@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="zxx">
+<!--header-->
+<partial name="/Views/LayoutPartials/_HeadPartial.cshtml" />
+<body>
+    <!--header-->
+    <partial name="/Views/LayoutPartials/_HeaderPartial.cshtml" />
+
+    @RenderBody()
+
+    <!--Footer-->
+    <partial name="/Views/LayoutPartials/_FooterPartial.cshtml" />
+
+    <!--scripts-->
+    <partial name="/Views/LayoutPartials/_ScriptPartial.cshtml" />
+
+</body>
+</html>
