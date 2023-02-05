@@ -1,0 +1,45 @@
+﻿@using EntityLayer.Concrete
+@model List<Feature>
+<div class="best-rooms py-5">
+    <div class="container py-md-5">
+        <div class="ban-content-inf row">
+           
+            <div class="maghny-gd-1 col-lg-6" style="margin-top:2%">
+                <div class="maghny-grid">
+                    <figure class="effect-lily border-radius  m-0">
+                        <img class="img-fluid" src="@ViewBag.Image" alt="" />
+                        <figcaption>
+                            <div>
+                                <h4>@ViewBag.title</h4>
+                                <p>@ViewBag.price Başlangıç Fiyat </p>
+                            </div>
+
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="maghny-gd-1 col-6 mt-4">
+                            <div class="maghny-grid">
+                                <figure class="effect-lily border-radius">
+                                    <img class="img-fluid" src="@item.Image" alt="" />
+                                    <figcaption>
+                                        <div>
+                                            <h4>@item.Title</h4>
+                                            <p>@item.Description Başlangıç Fiyat</p>
+                                        </div>
+
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

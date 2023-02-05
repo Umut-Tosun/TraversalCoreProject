@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model List<Destination>
+<section class="w3l-grids-3 py-5">
+    <div class="container py-md-5">
+        <div class="title-content text-left mb-lg-5 mb-4">
+            <h6 class="sub-title">Gezmek güzeldir</h6>
+            <h3 class="hny-title">Popüler Rotalar</h3>
+        </div>
+        <div class="row bottom-ab-grids">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-6 subject-card mt-lg-0 mt-4">
+                    <div class="subject-card-header p-4">
+                        <a href="#" class="card_title p-lg-4d-block">
+                            <div class="row align-items-center">
+                                <div class="col-sm-5 subject-img">
+                                    <img src="@item.ImageUrl" class="img-fluid" alt="">
+                                </div>
+                                <div class="col-sm-7 subject-content mt-sm-0 mt-4">
+                                    <h4>@item.City</h4>
+                                    <p>@item.DayNight</p>
+                                    <div class="dst-btm">
+                                        <h6 class=""> Başlayan Fiyatlarla </h6>
+                                        <span>$@item.price</span>
+                                    </div>
+                                    <p class="sub-para">@item.Description</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+               
+            }
+        </div>
+    </div>
+</section>
