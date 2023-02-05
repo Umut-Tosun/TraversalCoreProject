@@ -22,7 +22,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Feature2> Feature2s { get; set; }
         public DbSet<Guide> Guides { get; set; }
         public DbSet<NewsLetter> NewsLetters { get; set; }
-        public DbSet<SubAbout> Su { get; set; }
+        public DbSet<SubAbout> SubAbout { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
     }
 }
