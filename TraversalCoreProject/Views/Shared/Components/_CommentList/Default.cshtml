@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model List<Comment>
+<div class="comments mt-5">
+    <h4 class="side-title ">Yorumlar (@Model.Count)</h4>
+    @foreach (var item in Model)
+    { 
+    <div class="media mt-4">
+        <div class="img-circle">
+                <img src="https://cdn.discordapp.com/attachments/1070685359672926278/1074317600265359440/663338.png" class="img-fluid" alt="...">
+        </div>
+        <div class="media-body">
+
+            <ul class="time-rply mb-2">
+                <li>
+                    <a href="#URL" class="name mt-0 mb-2 d-block">@item.UserName</a>
+                        @item.DateTime.ToString("dd-MMM-yyyy")
+
+                </li>          
+            </ul>
+            <p>
+               @item.Message
+            </p>
+        </div>
+    </div>
+    }
+</div>

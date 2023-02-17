@@ -22,22 +22,22 @@
     <div class="grids py-lg-5 py-md-4">
         <div class="container">
             <h3 class="hny-title mb-5">Popüler Rotalarımız</h3>
-            <div class="row">      
+            <div class="row">
                 @foreach (var item in Model)
-                {            
-                <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="@item.ImageUrl" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">@item.City</a></h4>
-                            <p>@item.DayNight</p>
-                            <div class="dst-btm">
-                                <h6 class="">Başlangıç Fiyat </h6>
-                                <span>$@item.price</span>
+                {
+                    <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
+                        <div class="column">
+                            <a href="/Destination/DestinationDetails/@item.DestinationId"><img src="@item.ImageUrl" alt="" class="img-fluid"></a>
+                            <div class="info">
+                                <h4><a href="blog-single.html">@item.City</a></h4>
+                                <p>@item.DayNight</p>
+                                <div class="dst-btm">
+                                    <h6 class="">Başlangıç Fiyat </h6>
+                                    <span>$@item.price</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 }
             </div>
         </div>
