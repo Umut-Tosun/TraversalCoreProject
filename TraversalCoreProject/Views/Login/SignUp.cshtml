@@ -1,4 +1,4 @@
-﻿
+﻿@model TraversalCoreProject.Models.UserRegisterViewModel
 @{
     Layout = null;
 }
@@ -11,53 +11,86 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- LINEARICONS -->
-	<link rel="stylesheet" href="~/colorlib-regform-26/onts/linearicons/style.css">
+	<link rel="stylesheet" href="~/colorlib-regform-25/fonts/linearicons/style.css">
+
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" href="~/colorlib-regform-25/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+	<!-- DATE-PICKER -->
+	<link rel="stylesheet" href="~/colorlib-regform-25/vendor/date-picker/css/datepicker.min.css">
 
 	<!-- STYLE CSS -->
-	<link rel="stylesheet" href="~/colorlib-regform-26/css/style.css">
+	<link rel="stylesheet" href="~/colorlib-regform-25/css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
 
 	<div class="wrapper">
 		<div class="inner">
-			<img src="~/colorlib-regform-26/images/image-1.png" alt="" class="image-1">
-			<form action="">
-				<h3>Bir hesabın yok mu?</h3>
-				<div class="form-holder">
-					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" placeholder="Ad">
+			<form method="post">
+				<h3>Yeni Seyahatler İçin Hazırlan</h3>
+				<div class="form-row">
+					<div class="form-wrapper">
+						<label for="">Adınız *</label>
+						<input type="text" class="form-control" name="Name" placeholder="Adınız">
+						@Html.ValidationMessageFor(x=>x.Name,null,new {@class="text-danger"})
+					</div>
+					<div class="form-wrapper">
+						<label for="">Soyadınız *</label>
+						<input type="text" class="form-control" name="SurName" placeholder="Soyadınız">
+						@Html.ValidationMessageFor(x=>x.SurName,null,new {@class="text-danger"})
+					</div>
+					
 				</div>
-				<div class="form-holder">
-					<span class="lnr lnr-phone-handset"></span>
-					<input type="text" class="form-control" placeholder="Soyad">
+				<div class="form-row">
+					<div class="form-wrapper">
+						<label for="">Kulanıcı Adınız *</label>
+						<input type="text" class="form-control" name="UserName" placeholder="Soyadınız">
+						@Html.ValidationMessageFor(x=>x.UserName,null,new {@class="text-danger"})
+					</div>
+					<div class="form-wrapper">
+						<label for="">E-Posta *</label>
+						<input type="email" class="form-control" name="Mail" placeholder="E-posta adresiniz">
+						@Html.ValidationMessageFor(x=>x.Mail,null,new {@class="text-danger"})
+					</div>
+					</div>
+				<div class="form-row">
+					
+					<div class="form-wrapper">
+						<label for="">Şifre</label>
+						<input type="password" class="form-control" name="Password" placeholder="Şifreniz">
+						@Html.ValidationMessageFor(x=>x.Password,null,new {@class="text-danger"})
+					</div>
+					<div class="form-wrapper">
+						<label for="">Şifre Tekrar</label>
+						<input type="password" class="form-control" name="ConfirmPassword" placeholder="Şifre Tekrar">
+						@Html.ValidationMessageFor(x=>x.ConfirmPassword,null,new {@class="text-danger"})
+					</div>
 				</div>
-				<div class="form-holder">
-					<span class="lnr lnr-envelope"></span>
-					<input type="email" class="form-control" placeholder="E-posta">
+				<div class="text-danger" asp-validation-summary="ModelOnly">
+
 				</div>
-				<div class="form-holder">
-					<span class="lnr lnr-envelope"></span>
-					<input type="tel" class="form-control" placeholder="Telefon">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox"> Kuralları okudum kabul ediyorum.
+						<span class="checkmark"></span>
+					</label>
 				</div>
-				<div class="form-holder">
-					<span class="lnr lnr-lock"></span>
-					<input type="password" class="form-control" placeholder="Şifre">
-				</div>
-				<div class="form-holder">
-					<span class="lnr lnr-lock"></span>
-					<input type="password" class="form-control" placeholder="Şifre Tekrar">
-				</div>
-				<button>
-					<span>Kayıt Ol</span>
+				<br />
+				<button data-text="Hesap Oluştur">
+					<span>Hesap Oluştur</span>
 				</button>
 			</form>
-			<img src="~/colorlib-regform-26/images/image-2.png" alt="" class="image-2">
 		</div>
-
 	</div>
 
-	<script src="~/colorlib-regform-26/js/jquery-3.3.1.min.js"></script>
-	<script src="~/colorlib-regform-26/js/main.js"></script>
+	<script src="~/colorlib-regform-25/js/jquery-3.3.1.min.js"></script>
+
+	<!-- DATE-PICKER -->
+	<script src="~/colorlib-regform-25/vendor/date-picker/js/datepicker.js"></script>
+	<script src="~/colorlib-regform-25/vendor/date-picker/js/datepicker.en.js"></script>
+
+	<script src="~/colorlib-regform-25/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
