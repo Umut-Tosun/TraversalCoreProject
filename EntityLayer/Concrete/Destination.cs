@@ -21,6 +21,7 @@ namespace EntityLayer.Concrete
         public string SecondImageUrl { get; set; }
         public bool status { get; set; }
         public List<Comment> Comments { get; set; }
+      
 
     }
 }

@@ -16,7 +16,7 @@ namespace EntityLayer.Concrete
         public DateTime DateTime { get; set; }
         public bool isRead { get; set; }
         public int DestinationId { get; set; }
-        public Destination Destination { get; set; }
+        public Destination Destination { get; set; }       
 
     }
 }
