@@ -4,14 +4,16 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230223171548_addNewColumns")]
+    partial class addNewColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -578,7 +580,7 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.HasOne("EntityLayer.Concrete.Destination", "Destination")
-                        .WithMany("Reservations")
+                        .WithMany()
                         .HasForeignKey("DestinationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -647,8 +649,6 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Destination", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

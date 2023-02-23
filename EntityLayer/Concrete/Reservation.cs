@@ -11,10 +11,13 @@ namespace EntityLayer.Concrete
         public int ReservationId { get; set; }
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
-        public string PersonCount { get; set; }
+        public string RoomCount { get; set; }
+        public string ChildrenCount { get; set; }
+        public string AdultCount { get; set; }
         public int DestinationId { get; set; }
         public Destination Destination { get; set; }
         public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public string Details { get; set; }
         public bool Status { get; set; }
 

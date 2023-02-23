@@ -33,4 +33,12 @@
     <Folder Include="wwwroot\Content\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\colorlib-booking-1\css\bootstrap.min.css" />
+    <None Include="wwwroot\colorlib-booking-1\css\style.css" />
+    <None Include="wwwroot\colorlib-booking-1\img\background.jpg" />
+    <None Include="wwwroot\colorlib-booking-1\index.html" />
+    <None Include="wwwroot\colorlib-booking-1\readme.txt" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,124 @@
+﻿@model EntityLayer.Concrete.Reservation
+@{
+    ViewData["Title"] = "NewReservation";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rezervasyon Yap</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="~/colorlib-booking-1/css/style.css" />
+
+
+
+</head>
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5">
+                        <div class="booking-cta">
+                            <h1>Yeni Yolculuklara Hazırlan</h1>
+                            <p>
+                                Size özel indirimli kampanyalardan faydalanarak dünyanın dört bir yanına yolculuk açalabilirsiniz.Yılların verdiği
+                                tecrübemiz ile misafirlerimizi en iyi otellerde ve koşullarda karşılıyor ve ilgileniyoruz.Asya`dan Avrupa`ya Avrupa`dan
+                                Afrika`ya birçok bölgede anlaşmalı ortaklarımız ile en iyi hizmetleri sunmaya devam ediyoruz.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-pull-7">
+                        <div class="booking-form">
+                            <form method="post">
+                                <div class="form-group">
+                                    <span class="form-label">Şehir</span>
+                                    @Html.DropDownList("DestinationId",null,htmlAttributes:new{@class="form-control"}).
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">Tatil Başlangıç</span>
+                                            <input class="form-control" name="StartDate" type="date" min="@DateTime.Now.ToString("yyyy-MM-dd")" max="@DateTime.Now.AddDays(30).ToString("yyyy-MM-dd")" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">Tatil Bitiş</span>
+                                            <input class="form-control" name="EndDate" min="@DateTime.Now.AddDays(4).ToString("yyyy-MM-dd")" max="@DateTime.Now.AddDays(8).ToString("yyyy-MM-dd")" type="date" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Oda Sayısı</span>
+                                            <select name="RoomCount" class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Yetişkin Sayısı</span>
+                                            <select name="AdultCount" class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">3</option>
+                                                <option value="5">3</option>
+                                            </select>
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Çoçuk Sayısı</span>
+                                            <select name="ChildrenCount" class="form-control">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="form-group">
+                                        <span class="form-label">Eklemek İstedikleriniz</span>
+                                        <textarea class="form-control" name="Details" rows="5" cols="5"></textarea>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="form-btn">
+                                    <button class="submit-btn">Rezerve Et</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    swal("Uyarı!", "Rezervasyon işlemi sonrasında 24 saat içinde bilgilendirici bir mesaj alırsınız.Lütfen bildirimlerinizi kontrol ediniz.", "warning");
+</script>
+
