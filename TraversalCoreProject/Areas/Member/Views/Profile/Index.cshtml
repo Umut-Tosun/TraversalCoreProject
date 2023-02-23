@@ -1,0 +1,95 @@
+﻿@model TraversalCoreProject.Areas.Member.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="@Model.ImageUrl" id="output" name="ImageUrl" style="width:60%" alt="Maxwell Admin">
+                            </div>
+                            <br />
+                            <h5 class="user-name">@Model.name @Model.surName</h5>
+                            <h6 class="user-email">@Model.mail</h6>
+                        </div>
+                        <div class="about">
+                            <h5 class="mb-2 text-primary">Hakkımda</h5>
+                            <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="row gutters">
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-3 text-primary">Profil Bilgileri</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="name">İsim</label>
+                                    <input type="text" class="form-control" name="Name" value="@Model.name" id="name" placeholder="İsim ...">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="surName">Soyisim</label>
+                                    <input type="text" class="form-control" name="surName" value="@Model.surName" id="surName" placeholder="Soyisim ...">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="phone">Telefon Numarası</label>
+                                    <input type="text" class="form-control" name="phoneNumber" value="@Model.phoneNumber" id="phone" placeholder="E-posta Adresi ...">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="mail">E-Posta Adresi</label>
+                                    <input type="email" class="form-control" name="mail" id="mail" value="@Model.mail" placeholder="Telefon Numarası ...">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="password">Şifre</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Şifre ...">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="confirmPassword">Şifre Tekrar</label>
+                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Şifre Tekrar ...">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="website">Görsel Değiştir</label>
+                                    <input type="file" class="form-control" id="FileUrl" name="FileUrl" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    <button type="reset" id="submit" name="submit" class="btn btn-secondary">İptal</button>
+                                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Güncelle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
