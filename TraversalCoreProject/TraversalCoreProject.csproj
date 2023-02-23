@@ -28,4 +28,9 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Member\Data\" />
+    <Folder Include="wwwroot\Content\" />
+  </ItemGroup>
+
 </Project>
