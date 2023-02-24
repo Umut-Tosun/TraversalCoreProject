@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "MyAcceptedReservation";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+}
+
+<h1>Onaylanmış Rezervasyonlarım</h1>
+@if (!Model.Any())
+{
+    <span class="badge bg-warning">Onaylanmış Rezervasyonunuz Bulunmuyor.</span>
+}
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Lokasyon</th>
+        <th>Başlangıç Tarihi</th>
+        <th>Bitiş Tarihi</th>
+        <th>Oda Sayısı</th>
+        <th>Yetişkin Sayısı</th>
+        <th>Çoçuk Sayısı</th>
+        <th>Durum</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ReservationId</td>
+            <td>@item.Destination.City</td>
+            <td>@(((DateTime)item.StartDate).ToString("dd-MMM-yyyy"))</td>
+            <td>@(((DateTime)item.EndDate).ToString("dd-MMM-yyyy"))</td>
+            <td>@item.RoomCount</td>
+            <td>@item.AdultCount</td>
+            <td>@item.ChildrenCount</td>
+            <td>Onaylanmış</td>
+        </tr>
+    }
+</table>
+
