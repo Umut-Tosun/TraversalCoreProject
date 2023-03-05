@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Tur Rotaları</h1>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Şehir</th>
+            <th>Süre</th>
+            <th>Fiyat</th>
+            <th>Kapasite</th>
+            <th>Sitede Gör</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DestinationId</td>
+                <td>@item.City</td>
+                <td>@item.DayNight</td>
+                <td>@item.price ₺</td>
+                <td>@item.Capacity</td>
+                <td><a href="#" class="btn btn-outline-info">Sitede Gör</a></td>
+                <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationId" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationId" class="btn btn-outline-warning">Güncelle</a></td>
+                <td><a href="#" class="btn btn-outline-secondary">Sitede Gör</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Admin/Destination/AddDestination" class="btn btn-outline-success btn-lg">Yeni Tur Ekle</a>
+

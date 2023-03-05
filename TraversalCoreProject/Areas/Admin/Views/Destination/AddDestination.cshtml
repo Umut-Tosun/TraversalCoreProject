@@ -1,0 +1,107 @@
+﻿@model EntityLayer.Concrete.Destination
+@{
+    ViewData["Title"] = "AddDestination";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Tur Rotası Ekle</h1>
+
+<div class="row">
+    <!-- Basic Layout -->
+    <div class="col-xxl">
+        <div class="card mb-4">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="mb-0">Rota Bilgileri</h5>      
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-name">Şehir</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="City" id="basic-default-name" placeholder="Lütfen Şehir Giriniz" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label"  for="basic-default-company">Süre</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   name="DayNight"
+                                   id="basic-default-company"
+                                   placeholder="Kaç Gün Kaç Gece" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-email">Fiyat</label>
+                        <div class="col-sm-10">
+                            <div class="input-group input-group-merge">
+                                <input type="number"
+                                       id="basic-default-email"
+                                       class="form-control"
+                                       min="0"
+                                       name="price"
+                                       value="0"
+                                       aria-label="john.doe"
+                                       aria-describedby="basic-default-email2" />
+                                <span class="input-group-text" id="basic-default-email2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-email">Kontenjan</label>
+                        <div class="col-sm-10">
+                            <div class="input-group input-group-merge">
+                                <input type="number"
+                                       id="basic-default-email"
+                                       class="form-control"
+                                       min="0"
+                                       name="Capacity"
+                                       value="0"
+                                       aria-label="john.doe"
+                                       aria-describedby="basic-default-email2" />
+                                <span class="input-group-text" id="basic-default-email2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-company">Banner Görsel Url</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   name="CoverImageUrl"
+                                   id="basic-default-company"
+                                   placeholder="Banner Url Görsel Adresi" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-company">Görsel Url</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   name="ImageUrl"
+                                   id="basic-default-company"
+                                   placeholder="Görsel Adresi" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-message">Eklemek İstedikleriniz</label>
+                        <div class="col-sm-10">
+                            <textarea id="basic-default-message"
+                                      class="form-control"
+                                      name="Description"
+                                      placeholder="Varsa Eklemek İstedikleriniz..."
+                                      aria-label="Hi, Do you have a moment to talk Joe?"
+                                      aria-describedby="basic-icon-default-message2"></textarea>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Yeni Tur Rotası Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
