@@ -39,8 +39,8 @@ namespace TraversalCoreProject.Areas.Member.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UserEditViewModel userEditViewModel,IFormFile FileUrl)
         {
-            var user= await _userManager.FindByNameAsync(User.Identity.Name);
-
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            
             if (FileUrl != null) user.ImageUrl = FileService.CreateToIFormFile(FileUrl);    
             else user.ImageUrl = userEditViewModel.ImageUrl;
 

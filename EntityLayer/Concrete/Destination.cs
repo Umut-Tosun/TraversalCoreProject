@@ -9,6 +9,9 @@ namespace EntityLayer.Concrete
 {
     public class Destination
     {
+        public Destination() { 
+            this.Comments=new HashSet<Comment>();
+        }    
         [Key]
         public int DestinationId { get; set; }
         public string City { get; set; }
@@ -20,7 +23,7 @@ namespace EntityLayer.Concrete
         public string CoverImageUrl { get; set; }
         public string SecondImageUrl { get; set; }
         public bool status { get; set; }
-        public List<Comment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
         public List<Reservation> Reservations { get; set; }
       
 
