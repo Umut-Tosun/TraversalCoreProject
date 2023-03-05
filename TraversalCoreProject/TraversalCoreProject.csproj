@@ -39,6 +39,9 @@
     <None Include="wwwroot\colorlib-booking-1\img\background.jpg" />
     <None Include="wwwroot\colorlib-booking-1\index.html" />
     <None Include="wwwroot\colorlib-booking-1\readme.txt" />
+    <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue-comment.yml" />
+    <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue.yml" />
+    <None Include="wwwroot\sneat-1.0.0\.github\workflows\issue-staler.yml" />
   </ItemGroup>
 
 </Project>
