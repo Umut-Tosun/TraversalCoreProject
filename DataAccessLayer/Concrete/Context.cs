@@ -13,7 +13,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=LAPTOP-1HRI7UMH\\SQLEXPRESS01;database=DbTraversal;integrated security=true;");
+            optionsBuilder.UseSqlServer("server=LAPTOP-ETHQG58O\\sqlexpress;database=DbTraversal;integrated security=true;");
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<About2> About2s { get; set; }

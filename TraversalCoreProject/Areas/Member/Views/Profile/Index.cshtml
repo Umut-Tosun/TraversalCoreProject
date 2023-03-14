@@ -12,7 +12,8 @@
                     <div class="account-settings">
                         <div class="user-profile">
                             <div class="user-avatar">
-                                <img src="@Model.ImageUrl" id="output" name="ImageUrl" style="width:60%" alt="Maxwell Admin">
+                               
+                                <img src="@Model.ImageUrl" id="output"  name="ImageUrl" style="width:60%" alt="Maxwell Admin">
                             </div>
                             <br />
                             <h5 class="user-name">@Model.name @Model.surName</h5>
@@ -31,7 +32,7 @@
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
                         <div class="row gutters">
-
+                            <input name="ImageUrl" value="@Model.ImageUrl" hidden />
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <h6 class="mb-3 text-primary">Profil Bilgileri</h6>
                             </div>
